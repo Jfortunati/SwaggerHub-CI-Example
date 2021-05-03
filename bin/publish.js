@@ -9,8 +9,8 @@ const owner = "SE_Design";
 const api = "CN-Demo-API";
 const version = getVersion();
 
-const PUBLISH_URL = `https://api.swaggerhub.com/${owner}/${api}/${version}/settings/lifecycle?force=false`;
-const MARK_DEFAULT_URL = `https://api.swaggerhub.com/${owner}/${api}/settings/default`;
+const PUBLISH_URL = `https://api.swaggerhub.com/apis/${owner}/${api}/${version}/settings/lifecycle?force=false`;
+const MARK_DEFAULT_URL = `https://api.swaggerhub.com/apis/${owner}/${api}/settings/default`;
 
 function getVersion() {
   const doc = yaml.safeLoad(fs.readFileSync(openAPIPath, "utf8"));
