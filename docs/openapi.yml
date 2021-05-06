@@ -77,7 +77,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InventoryItem'
+              $ref: '#/components/schemas/inv'
       responses:
         "200":
           description: item delivered
@@ -87,6 +87,9 @@ paths:
           description: "invalid input, object invalid"
         "409":
           description: an existing item already exists
+    delete:
+      summary: Delete stuff
+      responses: {}
 components:
   schemas:
     InventoryItem:
