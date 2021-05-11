@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - master
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,9 +15,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: "12.x"
-    - run: npm ci
-    - run: node bin/publish
+    - name: Install SwaggerHub CLI
+      run: |
+        npm install swaggerhub-cli -g
+    - name: Publish the API definition
       env:
-        CI: true
-        SWAGGERHUB_KEY: ${{ secrets.SWAGGERHUB_KEY }}
-      if: github.ref == 'refs/heads/master'
+        SWAGGERHUB_API_KEY: ${{secrets.SWAGGERHUB_API_KEY}}
+      run: |
+        swaggerhub api:publish SE-Design/CN-Demo-API/1.0.0
