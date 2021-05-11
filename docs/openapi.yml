@@ -7,9 +7,9 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  version: 1.0.1
+  version: some-changes
 servers:
-- url: https://virtserver.swaggerhub.com/SE-Design/CN-Demo-API/1.0.0
+- url: https://virtserver.swaggerhub.com/SE-Design/CN-Demo-API/1.0.3
   description: SwaggerHub API Auto Mocking
 tags:
 - name: admins
@@ -87,6 +87,12 @@ paths:
           description: "invalid input, object invalid"
         "409":
           description: an existing item already exists
+    delete:
+      summary: Delete stuff.
+      description: delete stuff
+      responses:
+        "200":
+          description: all deleted
 components:
   schemas:
     InventoryItem:
