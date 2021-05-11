@@ -20,6 +20,6 @@ jobs:
         npm install swaggerhub-cli -g
     - name: Publish the API definition
       env:
-        SWAGGERHUB_API_KEY: ${{secrets.SWAGGERHUB_KEY}}
+        SWAGGERHUB_API_KEY: ${{secrets.SWAGGERHUB_API_KEY}}
       run: |
         swaggerhub api:publish SE-Design/CN-Demo-API/1.0.0
